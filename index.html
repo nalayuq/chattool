@@ -1,0 +1,438 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create topic-based boxes for your custom chat scripts, then open Noyra Floater beside your CRM. Find, copy, and send the right reply fast, without switching tabs.">
+  <meta name="theme-color" content="#000000">
+  <title>Custom chat scripts beside your CRM | Noyra</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/site.css?v=150">
+</head>
+<body class="landing-page">
+  <script>try { if (localStorage.getItem('noyra-theme') === 'light') document.body.classList.add('light-theme'); } catch {}</script>
+
+  <header class="site-header landing-header">
+    <div class="header-left">
+      <a href="index.html" class="logo-container" aria-label="Noyra home">
+        <span class="brand-mark" aria-hidden="true">n</span>
+        <span class="brand-lockup">
+          <span class="logo-text">NOYRA</span>
+          <span class="brand-caption">SUPPORT WORKSPACE</span>
+        </span>
+      </a>
+    </div>
+    <nav class="header-right landing-actions" aria-label="Main navigation">
+      <button class="landing-theme-toggle" id="themeToggle" type="button" aria-label="Switch to day theme" aria-pressed="false" title="Switch theme">
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="3.6"/><path d="M12 2.5v2M12 19.5v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2.5 12h2m15 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.2 15.1A8.5 8.5 0 0 1 8.9 3.8a8.7 8.7 0 1 0 11.3 11.3Z"/></svg>
+      </button>
+      <button class="login-button" id="openAuth" type="button" aria-haspopup="dialog">Log in <span aria-hidden="true">↗</span></button>
+    </nav>
+  </header>
+
+  <main class="landing-main">
+    <section class="hero-copy" aria-labelledby="hero-title">
+      <h1 id="hero-title">Reply faster.<br>Reply <em>better.</em></h1>
+      <p class="hero-description">Create topic-based boxes for your custom chat scripts, then open Noyra Floater beside your CRM. Find, copy, and send the right reply fast, without switching tabs.</p>
+      <div class="hero-cta-row">
+        <button class="hero-primary-cta" id="openDemo" type="button">See how it works <span aria-hidden="true">↗</span></button>
+      </div>
+    </section>
+
+    <section class="chat-stage" id="preview" aria-label="Preview of custom Noyra scripts in a Floater window beside your CRM">
+      <div class="stage-orb stage-orb-one" aria-hidden="true"></div>
+      <div class="stage-orb stage-orb-two" aria-hidden="true"></div>
+      <div class="floating-status glass-card" aria-hidden="true">
+        <span class="status-check">✓</span>
+        <span><b>Order updates</b><small>4 saved scripts in this box</small></span>
+      </div>
+
+      <div class="chat-window glass-card">
+        <div class="chat-window-topbar">
+          <div class="chat-profile">
+            <span class="profile-avatar">n</span>
+            <span class="profile-label"><b>Noyra</b><small>Chat scripts · Floater</small></span>
+          </div>
+          <span class="online-status"><i></i> ONLINE</span>
+        </div>
+
+        <div class="chat-conversation">
+          <p class="conversation-time">TODAY · 10:42 AM</p>
+          <div class="message-row agent-row">
+            <span class="message-avatar" aria-hidden="true">n</span>
+            <div class="message-bubble agent-bubble">Your order is on the way, Nora. It’s due tomorrow. <span class="message-time">10:42</span></div>
+          </div>
+          <div class="message-row customer-row">
+            <div class="message-bubble customer-bubble">Perfect, thanks for checking so quickly! <span class="message-time">10:43</span></div>
+          </div>
+          <div class="typing-row"><span class="typing-dots" aria-label="Typing"><i></i><i></i><i></i></span><span>Quick reply ready</span><span class="typing-cursor" aria-hidden="true"></span></div>
+        </div>
+
+        <div class="chat-composer">
+          <span class="composer-plus" aria-hidden="true">+</span>
+          <span class="composer-placeholder">Choose a script or type a reply…</span>
+          <span class="composer-shortcut" aria-hidden="true">↵</span>
+          <span class="composer-send" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 14-7-4.5 14-2.5-5-7-2Z"/><path d="m12 14 7-9"/></svg></span>
+        </div>
+      </div>
+
+      <div class="keyboard-float glass-card" aria-hidden="true">
+        <div class="keyboard-label"><span>SAVED REPLIES</span><span>ONE CLICK</span></div>
+        <div class="keyboard-keys"><span>01</span><span>02</span><span class="key-wide">choose a reply</span><span>↵</span></div>
+      </div>
+
+      <div class="mouse-float glass-card" aria-hidden="true">
+        <svg class="mouse-illustration" viewBox="0 0 48 64" fill="none"><path d="M24 3C12.95 3 4 11.95 4 23v18c0 11.05 8.95 20 20 20s20-8.95 20-20V23C44 11.95 35.05 3 24 3Z"/><path d="M24 4v16m0 0h.01"/></svg>
+        <span>quick<br>navigation</span>
+      </div>
+
+      <svg class="floating-cursor" viewBox="0 0 34 42" aria-hidden="true"><path d="M4 3.5c-.8-.7-2-.1-1.8 1l5.5 31.2c.2 1.2 1.9 1.5 2.6.5l5.3-8.2 7.3 9.2c.6.8 1.8.9 2.5.3l2.3-1.8c.8-.6.9-1.8.3-2.5l-7.2-9.1 9.1-3.6c1.1-.4 1.1-2 0-2.4L4 3.5Z"/></svg>
+    </section>
+  </main>
+
+  <section class="script-workspace" id="scriptWorkspace" aria-labelledby="workspaceTitle" hidden>
+    <div class="script-workspace-shell">
+      <div class="script-workspace-heading">
+        <div>
+          <h2 id="workspaceTitle">Manage your scripts</h2>
+        </div>
+        <div class="workspace-heading-actions">
+          <button class="workspace-secondary-button workspace-floater-button" id="workspaceOpenPip" type="button" disabled>Launch Floater <span aria-hidden="true">&#8599;</span></button>
+          <button class="workspace-primary-button" id="workspaceAddBox" type="button"><span aria-hidden="true">&plus;</span> Add a box</button>
+        </div>
+      </div>
+
+      <p class="workspace-status" id="workspaceStatus" role="status" aria-live="polite" hidden></p>
+
+      <div class="workspace-empty" id="workspaceEmpty" hidden>
+        <span class="workspace-empty-icon" aria-hidden="true">+</span>
+        <h3>Create your first topic box</h3>
+        <p>Add a box such as Welcome, then save one or more chat scripts inside it.</p>
+        <button class="workspace-secondary-button" id="workspaceEmptyAdd" type="button">Create your first box <span aria-hidden="true">&rarr;</span></button>
+      </div>
+
+      <div class="script-box-grid" id="scriptBoxGrid" aria-label="Your topic boxes"></div>
+      <section class="script-box-detail-view" id="scriptBoxDetailView" aria-live="polite" hidden>
+        <button class="workspace-back-button" id="workspaceBackToBoxes" type="button"><span aria-hidden="true">&larr;</span> All boxes</button>
+        <div class="script-box-detail" id="scriptBoxDetail"></div>
+      </section>
+    </div>
+  </section>
+
+  <dialog class="workspace-dialog" id="boxEditorDialog" aria-labelledby="boxEditorTitle">
+    <form class="workspace-dialog-card" id="boxEditorForm">
+      <div class="workspace-dialog-heading">
+        <div><p class="workspace-eyebrow">SCRIPT BOX</p><h2 id="boxEditorTitle">Create a box</h2></div>
+        <button class="workspace-dialog-close" type="button" data-close-workspace-dialog aria-label="Close">&times;</button>
+      </div>
+      <label class="workspace-field" for="boxNameInput">Topic name<input id="boxNameInput" name="boxName" maxlength="60" placeholder="For example, Order updates" required></label>
+      <p class="workspace-dialog-message" id="boxEditorMessage" role="status" hidden></p>
+      <div class="workspace-dialog-actions">
+        <button class="workspace-secondary-button" type="button" data-close-workspace-dialog>Cancel</button>
+        <button class="workspace-primary-button" id="boxEditorSubmit" type="submit">Create box <span aria-hidden="true">&rarr;</span></button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="demo-dialog" id="demoDialog" aria-labelledby="demoTitle" aria-describedby="demoIntro">
+    <div class="demo-shell">
+      <div class="demo-dialog-header">
+        <div>
+          <p class="demo-kicker"><span class="eyebrow-pulse" aria-hidden="true"></span> 3-STEP PRODUCT TOUR</p>
+          <h2 id="demoTitle">From script box to CRM reply.</h2>
+          <p id="demoIntro">See how Noyra keeps your custom chat scripts ready in a floating window.</p>
+        </div>
+        <button class="demo-close" id="closeDemo" type="button" aria-label="Close demo">&times;</button>
+      </div>
+
+      <div class="demo-layout">
+        <nav class="demo-steps" aria-label="Demo steps">
+          <button class="demo-step-button" type="button" data-demo-step="0" aria-current="step">
+            <span class="demo-step-number">01</span><span class="demo-step-label"><b>Create a box</b><small>Organize by topic</small></span><span class="demo-step-arrow" aria-hidden="true">&rsaquo;</span>
+          </button>
+          <button class="demo-step-button" type="button" data-demo-step="1">
+            <span class="demo-step-number">02</span><span class="demo-step-label"><b>Add your scripts</b><small>Use your own wording</small></span><span class="demo-step-arrow" aria-hidden="true">&rsaquo;</span>
+          </button>
+          <button class="demo-step-button" type="button" data-demo-step="2">
+            <span class="demo-step-number">03</span><span class="demo-step-label"><b>Launch Floater beside your CRM</b><small>Copy without switching tabs</small></span><span class="demo-step-arrow" aria-hidden="true">&rsaquo;</span>
+          </button>
+        </nav>
+
+        <div class="demo-stage" aria-label="CRM with Noyra Floater open">
+          <div class="demo-crm-window" aria-hidden="true">
+            <div class="demo-crm-titlebar"><span class="demo-crm-mark">C</span><b>CRM</b><span class="demo-crm-divider"></span><span>Customer profile</span><span class="demo-crm-dots">&bull; &bull; &bull;</span></div>
+            <div class="demo-crm-body">
+              <div class="demo-crm-sidebar"><i></i><i></i><i></i><i></i></div>
+              <div class="demo-crm-record">
+                <p class="demo-micro-label">ACTIVE CONTACT</p>
+                <h3>Nora Patel</h3>
+                <p class="demo-crm-email">nora.patel@example.com</p>
+                <div class="demo-order-card"><span class="demo-order-icon">#</span><span><small>ORDER 10482</small><b>In transit</b></span><i></i></div>
+                <p class="demo-micro-label demo-thread-label">LATEST MESSAGE</p>
+                <div class="demo-crm-message">Could you check when my order will arrive?</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo-pip-window">
+            <div class="demo-pip-titlebar">
+              <span class="demo-pip-brand"><span class="demo-pip-mark">n</span><span><b>NOYRA</b><small>CHAT SCRIPTS</small></span></span>
+              <span class="demo-pip-badge"><i></i> FLOATING WINDOW</span>
+              <button class="demo-pip-close" type="button" tabindex="-1" aria-hidden="true">&times;</button>
+            </div>
+            <div class="demo-pip-content">
+              <div class="demo-pip-view" data-demo-view="0">
+                <p class="demo-pip-label">YOUR SCRIPT BOXES</p>
+                <div class="demo-box-row"><span class="demo-box-icon">&#9633;</span><span><b>Order updates</b><small>Shipping, tracking, delivery</small></span><span class="demo-row-arrow">&rsaquo;</span></div>
+                <div class="demo-new-box"><span class="demo-add-icon">+</span><span><b>Create a new box</b><small>Group scripts by topic</small></span></div>
+              </div>
+              <div class="demo-pip-view" data-demo-view="1" hidden>
+                <p class="demo-pip-label">ORDER UPDATES <span>3 SCRIPTS</span></p>
+                <div class="demo-script-row is-selected"><span class="demo-script-symbol">&#10003;</span><span><b>Shipping update</b><small>Your order is on the way...</small></span></div>
+                <div class="demo-script-row"><span class="demo-script-symbol">&#8599;</span><span><b>Tracking link</b><small>Here is your tracking link...</small></span></div>
+                <div class="demo-add-script">+ Add a custom script</div>
+              </div>
+              <div class="demo-pip-view" data-demo-view="2" hidden>
+                <p class="demo-pip-label">READY TO USE IN YOUR CRM</p>
+                <div class="demo-reply-preview">Your order is on the way and is expected to arrive tomorrow. You can follow its progress with the tracking link in your order details.</div>
+                <div class="demo-reply-footer"><span><i></i> Shipping update</span><span class="demo-copy-label">COPY &amp; PASTE</span></div>
+              </div>
+            </div>
+            <div class="demo-pip-footer"><span>ORDER UPDATES</span><span>SEARCH SCRIPTS <b>/</b></span></div>
+          </div>
+          <div class="demo-floating-label"><span class="demo-floating-dot"></span> Noyra floats above your CRM</div>
+        </div>
+      </div>
+
+      <div class="demo-bottom">
+        <div class="demo-summary" aria-live="polite">
+          <p class="demo-step-count" id="demoStepCount">STEP 01 / 03</p>
+          <h3 id="demoStepTitle">Create a box for each topic</h3>
+          <p id="demoStepDescription">Group replies into boxes such as orders, refunds, or delivery. Your scripts stay organized and easy to find.</p>
+          <div class="demo-feature-list" id="demoFeatureList"><span>Topic-based boxes</span><span>Easy to organize</span></div>
+        </div>
+        <div class="demo-controls">
+          <button class="demo-back-button" id="demoPrevious" type="button" disabled>Back</button>
+          <button class="demo-next-button" id="demoNext" type="button">Next step <span aria-hidden="true">&rarr;</span></button>
+        </div>
+      </div>
+      <p class="demo-footnote">Noyra Floater stays beside your CRM, so your saved scripts are ready while you work.</p>
+    </div>
+  </dialog>
+
+  <dialog class="auth-dialog" id="authDialog" aria-labelledby="authTitle">
+    <div class="auth-shell">
+      <div class="auth-dialog-header">
+        <div>
+          <p class="auth-kicker">YOUR NOYRA ACCOUNT</p>
+          <h2 id="authTitle">Log in to Noyra</h2>
+          <p class="auth-intro">Create an account with a username and password.</p>
+        </div>
+        <button class="auth-close" id="closeAuth" type="button" aria-label="Close account dialog">&times;</button>
+      </div>
+
+      <p class="auth-config-note" id="authConfigNote" hidden></p>
+      <p class="auth-message" id="authMessage" role="status" aria-live="polite" hidden></p>
+
+      <div class="auth-tabs" id="authTabs" role="tablist" aria-label="Account options">
+        <button type="button" class="auth-tab is-active" id="authSignInTab" role="tab" aria-selected="true" aria-controls="authSignInForm">Log in</button>
+        <button type="button" class="auth-tab" id="authSignUpTab" role="tab" aria-selected="false" aria-controls="authSignUpForm">Create account</button>
+      </div>
+
+      <form class="auth-form" id="authSignInForm" data-auth-view="signin">
+        <label>Username<input name="username" type="text" autocomplete="username" placeholder="Your username" minlength="3" maxlength="24" required></label>
+        <label>Password<input name="password" type="password" autocomplete="current-password" placeholder="Your password" maxlength="128" required></label>
+        <button class="auth-text-button auth-forgot" id="authForgotLink" type="button">Forgot password?</button>
+        <button class="auth-submit" type="submit">Log in <span aria-hidden="true">&rarr;</span></button>
+        <p class="auth-switch-copy">New to Noyra? <button class="auth-text-button" id="authShowSignup" type="button">Create an account</button></p>
+      </form>
+
+      <form class="auth-form" id="authSignUpForm" data-auth-view="signup" hidden>
+        <label>First name<input name="firstName" type="text" autocomplete="given-name" maxlength="60" required></label>
+        <label>Last name<input name="lastName" type="text" autocomplete="family-name" maxlength="60" required></label>
+        <label>Choose a username<input name="username" type="text" autocomplete="username" placeholder="3–24 characters" minlength="3" maxlength="24" pattern="[A-Za-z0-9_.-]{3,24}" required></label>
+        <label>Create password<input name="password" type="password" autocomplete="new-password" minlength="8" maxlength="128" placeholder="At least 8 characters" required></label>
+        <label>Enter password again<input name="confirmPassword" type="password" autocomplete="new-password" minlength="8" maxlength="128" placeholder="Confirm your password" required></label>
+        <fieldset class="auth-security-questions">
+          <legend>Choose one question from each group</legend>
+          <div class="auth-question-item">
+            <label for="authQuestion1">School &amp; early life</label>
+            <select id="authQuestion1" name="question1" required>
+              <option value="">Choose a question</option>
+              <option value="school.first_school">What was the name of your first school?</option>
+              <option value="school.favorite_teacher">What was the first name of your favorite teacher?</option>
+              <option value="school.childhood_nickname">What nickname did your family use when you were young?</option>
+              <option value="school.childhood_street">What street did you live on as a child?</option>
+              <option value="school.first_job">What was your first paid job?</option>
+              <option value="school.best_friend">What was the first name of your childhood best friend?</option>
+            </select>
+            <label for="authAnswer1">Your answer</label>
+            <input id="authAnswer1" name="answer1" type="text" autocomplete="off" maxlength="100" required>
+          </div>
+          <div class="auth-question-item">
+            <label for="authQuestion2">Family &amp; pets</label>
+            <select id="authQuestion2" name="question2" required>
+              <option value="">Choose a question</option>
+              <option value="family.first_pet">What was your first pet's name?</option>
+              <option value="family.oldest_sibling">What was the first name of your oldest sibling?</option>
+              <option value="family.grandparent_nickname">What nickname did your grandparents call you?</option>
+              <option value="family.caregiver">What was the first name of a childhood caregiver?</option>
+              <option value="family.oldest_cousin">What was the first name of your oldest cousin?</option>
+              <option value="family.childhood_neighbor">What was the first name of a childhood neighbor?</option>
+            </select>
+            <label for="authAnswer2">Your answer</label>
+            <input id="authAnswer2" name="answer2" type="text" autocomplete="off" maxlength="100" required>
+          </div>
+          <div class="auth-question-item">
+            <label for="authQuestion3">Favorites &amp; milestones</label>
+            <select id="authQuestion3" name="question3" required>
+              <option value="">Choose a question</option>
+              <option value="milestone.birth_city">What city were you born in?</option>
+              <option value="milestone.first_concert">What was the first concert you attended?</option>
+              <option value="milestone.first_book">What was the title of the first book you remember owning?</option>
+              <option value="milestone.childhood_meal">What was your favorite meal as a child?</option>
+              <option value="milestone.first_team">What sports team did you first support?</option>
+              <option value="milestone.first_theater_movie">What was the first movie you remember seeing in a theater?</option>
+            </select>
+            <label for="authAnswer3">Your answer</label>
+            <input id="authAnswer3" name="answer3" type="text" autocomplete="off" maxlength="100" required>
+          </div>
+          <p class="auth-form-note">These answers are your only password recovery option. Use private answers you can remember.</p>
+        </fieldset>
+        <button class="auth-submit" type="submit">Create account <span aria-hidden="true">&rarr;</span></button>
+        <p class="auth-switch-copy">Already have an account? <button class="auth-text-button" id="authShowSignin" type="button">Log in</button></p>
+      </form>
+
+      <form class="auth-form" id="authResetForm" data-auth-view="reset" hidden>
+        <div id="authRecoveryLookup">
+          <p class="auth-form-note">Enter your username to load the three questions you selected when you registered.</p>
+          <label>Username<input id="authRecoveryUsername" type="text" autocomplete="username" minlength="3" maxlength="24" required></label>
+          <button class="auth-submit" id="authLoadRecoveryQuestions" type="button">Show my questions <span aria-hidden="true">&rarr;</span></button>
+        </div>
+        <div id="authRecoveryAnswers" hidden>
+          <p class="auth-form-note">Answer the same three questions, then choose a new password.</p>
+          <p class="auth-recovery-question" id="authRecoveryQuestion1"></p>
+          <label>Answer<input name="answer1" type="text" autocomplete="off" maxlength="100" required></label>
+          <p class="auth-recovery-question" id="authRecoveryQuestion2"></p>
+          <label>Answer<input name="answer2" type="text" autocomplete="off" maxlength="100" required></label>
+          <p class="auth-recovery-question" id="authRecoveryQuestion3"></p>
+          <label>Answer<input name="answer3" type="text" autocomplete="off" maxlength="100" required></label>
+          <label>New password<input name="password" type="password" autocomplete="new-password" minlength="8" maxlength="128" required></label>
+          <label>Enter new password again<input name="confirmPassword" type="password" autocomplete="new-password" minlength="8" maxlength="128" required></label>
+          <button class="auth-submit" type="submit">Reset password <span aria-hidden="true">&rarr;</span></button>
+          <button class="auth-text-button auth-switch-copy" id="authChangeRecoveryUsername" type="button">Use a different username</button>
+        </div>
+        <p class="auth-switch-copy"><button class="auth-text-button" data-auth-back="signin" type="button">Back to log in</button></p>
+      </form>
+
+      <section class="auth-account" id="authAccountPanel" data-auth-view="account" hidden aria-live="polite">
+        <span class="auth-account-mark" aria-hidden="true">n</span>
+        <p class="auth-account-label">SIGNED IN</p>
+        <p class="auth-account-fullname" id="authAccountName"></p>
+        <p class="auth-account-username" id="authAccountUsername"></p>
+        <p class="auth-form-note">You are signed in to your Noyra account.</p>
+        <button class="auth-signout" id="authSignOut" type="button">Log out</button>
+      </section>
+    </div>
+  </dialog>
+
+  <script>
+    (() => {
+      const toggle = document.getElementById('themeToggle');
+      if (!toggle) return;
+      const themeColor = document.querySelector('meta[name="theme-color"]');
+      const updateThemeControl = () => {
+        const isDay = document.body.classList.contains('light-theme');
+        toggle.setAttribute('aria-pressed', String(isDay));
+        toggle.setAttribute('aria-label', isDay ? 'Switch to night theme' : 'Switch to day theme');
+        if (themeColor) themeColor.content = isDay ? '#eef3ed' : '#000000';
+      };
+      updateThemeControl();
+      toggle.addEventListener('click', () => {
+        const isDay = document.body.classList.toggle('light-theme');
+        try { localStorage.setItem('noyra-theme', isDay ? 'light' : 'dark'); } catch {}
+        updateThemeControl();
+      });
+    })();
+  </script>
+  <script>
+    (() => {
+      const dialog = document.getElementById('demoDialog');
+      const openButton = document.getElementById('openDemo');
+      const closeButton = document.getElementById('closeDemo');
+      const previousButton = document.getElementById('demoPrevious');
+      const nextButton = document.getElementById('demoNext');
+      const stepButtons = [...document.querySelectorAll('[data-demo-step]')];
+      const views = [...document.querySelectorAll('[data-demo-view]')];
+      const stepCount = document.getElementById('demoStepCount');
+      const stepTitle = document.getElementById('demoStepTitle');
+      const stepDescription = document.getElementById('demoStepDescription');
+      const featureList = document.getElementById('demoFeatureList');
+      if (!dialog || !openButton) return;
+
+      const steps = [
+        {
+          title: 'Create a box for each topic',
+          description: 'Group replies into boxes such as orders, refunds, or delivery. Your scripts stay organized and easy to find.',
+          features: ['Topic-based boxes', 'Easy to organize'],
+        },
+        {
+          title: 'Add the scripts you already use',
+          description: 'Put your own chat scripts inside each box. Keep your wording, update it whenever you need, and reuse it in future chats.',
+          features: ['Your custom wording', 'Reusable replies'],
+        },
+        {
+          title: 'Launch Floater beside your CRM',
+          description: 'Keep Noyra floating above your CRM. Pick a saved script, copy it, and paste it into the customer conversation without switching tabs.',
+          features: ['Floating window', 'Copy and paste', 'No tab switching'],
+        },
+      ];
+      let currentStep = 0;
+
+      const renderStep = (index) => {
+        currentStep = Math.max(0, Math.min(steps.length - 1, index));
+        const step = steps[currentStep];
+        stepButtons.forEach((button, buttonIndex) => {
+          if (buttonIndex === currentStep) button.setAttribute('aria-current', 'step');
+          else button.removeAttribute('aria-current');
+        });
+        views.forEach((view, viewIndex) => {
+          view.hidden = viewIndex !== currentStep;
+        });
+        stepCount.textContent = `STEP ${String(currentStep + 1).padStart(2, '0')} / 03`;
+        stepTitle.textContent = step.title;
+        stepDescription.textContent = step.description;
+        featureList.replaceChildren(...step.features.map((feature) => {
+          const chip = document.createElement('span');
+          chip.textContent = feature;
+          return chip;
+        }));
+        previousButton.disabled = currentStep === 0;
+        nextButton.innerHTML = currentStep === steps.length - 1 ? 'Close demo <span aria-hidden="true">&check;</span>' : 'Next step <span aria-hidden="true">&rarr;</span>';
+      };
+
+      openButton.addEventListener('click', () => {
+        renderStep(0);
+        dialog.showModal();
+      });
+      closeButton.addEventListener('click', () => dialog.close());
+      stepButtons.forEach((button) => button.addEventListener('click', () => renderStep(Number(button.dataset.demoStep))));
+      previousButton.addEventListener('click', () => renderStep(currentStep - 1));
+      nextButton.addEventListener('click', () => {
+        if (currentStep === steps.length - 1) dialog.close();
+        else renderStep(currentStep + 1);
+      });
+      dialog.addEventListener('click', (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+    })();
+  </script>
+  <script src="js/noyra.js?v=3" defer></script>
+  <script src="js/noyra-auth.js?v=2" defer></script>
+  <script src="js/noyra-workspace.js?v=8" defer></script>
+</body>
+</html>

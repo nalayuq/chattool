@@ -1,0 +1,24 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor Folders
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dependency & Build Artifacts
+.venv/
+node_modules/
+dist/
+.cache/
+__pycache__/
+*.py[cod]
+*.log
+
+# Local data and credentials
+data/
+.env
+.env.*
